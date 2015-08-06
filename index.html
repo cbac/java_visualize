@@ -74,12 +74,8 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 <script type="text/javascript" src="./CodeMirror/addon/edit/matchbrackets.js"></script>
 
 <script type="text/javascript" src="./config.js.php"></script> <!-- used to be opt-frontend.js -->
-<script type="text/javascript" src="./jv-frontend.js?7"></script> <!-- used to be opt-frontend.js -->
+<script type="text/javascript" src="./jv-frontend.js?8"></script> <!-- used to be opt-frontend.js -->
 <link rel="stylesheet" href="./OnlinePythonTutor/v3/css/opt-frontend.css"/>
-
-<script type="text/javascript">
-window.jv_cpp = false; // c++ fake visualizer extensions
-</script>
 
 </head>
 
@@ -115,7 +111,12 @@ window.jv_cpp = false; // c++ fake visualizer extensions
  <span style="white-space: nowrap;"> 
   <input id='disableNesting' type='checkbox'>
   <label for='disableNesting'>
-  Avoid nesting instances within instances
+  Prefer non-nesting and vertical layouts
+ </span>
+ <span style="white-space: nowrap;"> 
+  <input id='verticalLists' type='checkbox'>
+  <label for='verticalLists'>
+  Force linked lists to display vertically
  </span>
 </span> <!-- #options -->
 </td>
@@ -342,8 +343,6 @@ in general, this is a feature that still <a href="TODO">needs to be implemented<
 
 <div id="footer">
 
-<div id="data-div" style="display: none;">Data for WordPress: <textarea id="data" style="word-wrap:break-word;"></textarea></div>
-
 <p>
   <button id="genUrlBtn" class="smallBtn" type="button">Generate URL</button> <input type="text" id="urlOutput" size="70"/>
 </p>
@@ -351,6 +350,8 @@ in general, this is a feature that still <a href="TODO">needs to be implemented<
 <p>To share this visualization, click the 'Generate URL' button above
 and share that URL. To report a bug, paste the URL along with a brief
 error description in an email addressed to daveagp@gmail.com</p>
+
+<div id="iframeURL-div" style="display: none;">Embeddable iframe:<input type="text" id="iframeURL" size="70" style="font-family:monospace"/></div>
 
 <!--
 <div id="embedLinkDiv">
