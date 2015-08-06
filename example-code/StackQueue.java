@@ -1,13 +1,17 @@
+import java.util.ArrayDeque;
+import java.util.Queue;
+import java.util.Stack;
+
 public class StackQueue {
    public static void main(String[] args) {
-      Stack<String> stack = new Stack<>();
-      Queue<String> queue = new Queue<>();
+      Stack<String> stack = new Stack<String>();
+      Queue<String> queue = new ArrayDeque<String>();
 
       stack.push("stack-first");
       stack.push("stack-last");
 
-      queue.enqueue("queue-first");
-      queue.enqueue("queue-last");
+      queue.add("queue-first");
+      queue.add("queue-last");
 
       for (String s : stack) 
          System.out.println("stack contains " + s);
@@ -17,6 +21,6 @@ public class StackQueue {
       while (!stack.isEmpty())
          System.out.println(stack.pop());
       while (!queue.isEmpty())
-         System.out.println(queue.dequeue());
+         System.out.println(queue.remove());
    }
 }
